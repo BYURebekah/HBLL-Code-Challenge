@@ -14,7 +14,7 @@ def my_reversal(instring):
     return my_reversal(instring[:-1])
 
 def my_max(a, b, c):
-#there's already a max() function out there, but here is mymax
+#there's already a max() function out there, but here is my_max
 #to see the value it returns, use print(my_max())
     if a > b:
         firsttry = a
