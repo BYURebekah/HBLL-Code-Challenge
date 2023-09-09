@@ -1,0 +1,47 @@
+#I named all these functions something other than function to avoid confusion on which does which
+#the tasks are in the order that they appear in the pdf (1-4)
+
+def my_reversal(instring):
+    #this function prints the reverse of the input string
+    inarray = list(instring)
+#normally, I would just use .reverse(), but the purpose of the function is to reverse something...
+#    inarray.reverse()
+#    print(inarray)
+#... so this is my solution on how I would make a .reverse() style function
+    if not inarray:
+        return
+    print(inarray.pop())
+    return my_reversal(instring[:-1])
+
+def my_max(a, b, c):
+#there's already a max() function out there, but here is mymax
+#to see the value it returns, use print(my_max())
+    if a > b:
+        firsttry = a
+    else:
+        firsttry = b
+    if firsttry > c:
+        return firsttry
+    return c
+
+def my_factorial(n):
+#to see the value it returns, use print(my_factorial())
+    if n > 1:
+        return n * myfactorial(n-1)
+    return n
+
+def my_fib(nth):
+#to see the value it returns, use print(my_fib())
+#since 0 was explicitly excluded, I assumed that negative numbers were as well
+    if nth == 1 or nth == 2:
+        return 1
+    
+    def helper(a = 1, b = 2, counter = 0):
+        c = a + b
+        a = b
+        b = c
+        if counter == 3:
+            return a
+        return helper(a,b,counter-1)
+    
+    return helper(counter = nth)
